@@ -1,9 +1,11 @@
 #!/usr/bin/env bash 
 
 sudo docker rm -f $(sudo docker ps -qa)
+sudo docker rmi -f $(sudo docker images -q)
 sudo rm -rf /etc/ceph \
        /etc/cni \
        /etc/kubernetes \
+       /etc/rancher \
        /opt/cni \
        /opt/rke \
        /run/secrets/kubernetes.io \
@@ -13,8 +15,9 @@ sudo rm -rf /etc/ceph \
        /var/lib/etcd \
        /var/lib/cni \
        /var/lib/kubelet \
-       /var/lib/rancher/rke/log \
+       /var/lib/rancher\
        /var/log/containers \
+       /var/log/kube-audit \
        /var/log/pods \
        /var/run/calico \
        /var/etcd
