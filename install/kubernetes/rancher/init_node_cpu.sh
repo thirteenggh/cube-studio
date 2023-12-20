@@ -11,7 +11,8 @@ rm -rf /data/docker && mkdir -p /data/docker/
 
 # 安装docker，顺带安装调试工具
 yum update -y
-yum install docker-ce -y 
+# yum install docker-ce -y
+yum install docker-ce-20.10.24 -y 
 yum install -y htop docker-compose
 yum install -y wireshark
 yum install -y telnet
